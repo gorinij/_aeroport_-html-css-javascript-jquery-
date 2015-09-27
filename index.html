@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Aeroport</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+      <link href="js/jquery.formstyler.css" rel="stylesheet" />
+<!--      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>-->
+      <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+      <script src="js/jquery.formstyler.min.js"></script>
+	  <script src="js/script.js"></script>
+      <script>
+          $('checkbox').styler();
+      </script>
+
+      <style>
+ </style>
+
+  </head>
+  <body>
+    <div class="header_wrapper"><!--BEGIN HEADER_WRAPPER-->
+
+        <div class="header"><!--BEGIN HEADER-->
+          <a href="http://aeroport.ru" class="linkToAero"></a>
+          <div class="head_menu pull-right"><!--begin head_menu-->
+            <ul>
+              <li class="avia"><a href="#"><p>Авиабилеты</p></a></li>
+              <li class="hotels"><a href="#"><p>Отели</p></a></li>
+              <li class="rent"><a href="#" ><p>Аренда авто</p></a></li>
+              <li class="personal"><a href="#" c><p>Личный кабинет</p></a></li>
+              <li class="help"><a href="#" ><p>Помощь <span class="caret"></span></p></a></li>
+              <li class="sale"><a href="#" ><p>Акции</p></a></li>
+              <li class="money"><a href="#"><p> <span class="caret"></p></span> </a></li>
+            </ul>
+          </div><!--end head_menu-->
+        </div><!--END HEADER-->
+    </div><!--END HEADER_WRAPPER-->
+
+    <div class="content_wrapper">
+        <!--BEGIN CONTENT_WRAPPER-->
+        <div class="content calendar_content">
+            <!--BEGIN CONTENT-->
+            
+            <div id="bottom_arrow" class="calendar_arrow"></div>
+            
+            <div class="calendar_top">
+                <select>
+                    <option value="">Санкт-Петербург → Москва 22 апр</option>
+                </select>
+                <button id="calendar_change" class="btn">Изменить</button>
+            </div>
+            <div class="check_aero">
+                <div>
+                </div>
+                <span class="inp_group"><input type="text" class="inp" id="depart" value="Санкт-Петербург" autocomplete="off"><input type="radio" checked class="check_aero_radio" id="check_dep_aero" name="check_aero_radio"><span class="flight_date"><label for="check_dep_aero"></label></span></span>
+                <label style="margin-left: -10px;">Туда</label><label style="margin-right: 46px;">Туда/Обратно</label>
+                <div class="middleInp">
+                    <div class="switcher" id="switcher_RT_OW">
+                        <div class="option ow type selected" id="opt_RT_OW_OW"><b></b></div>
+                        <div class="option rt type " id="opt_RT_OW_RT"><b></b></div>
+                    </div>
+                </div>
+                <span class="inp_group"><input type="text" class="inp" id="arrival" name="arrival" value="Москва" autocomplete="off"><input type="radio" class="check_aero_radio" id="check_arr_radio" name="check_aero_radio"><span class="flight_date active"><label for=""></label></span></span>
+            </div>
+            <div class="cities pull-left"><a href="#">Москва</a><a href="#">Санкт-Петербург</a><a href="#">Стамбул</a><a href="#">Сочи</a></div>
+            <div class="cities pull-right"><a href="#">Москва</a><a href="#">Санкт-Петербург</a><a href="#">Стамбул</a><a href="#">Сочи</a></div>
+            <div id="calendar_content">
+                <div id="left_arrow" class="calendar_arrow"></div>
+                <div class="calendar_check">
+                    <div class="calendar_table">
+                        <!--begin calendar_table-->
+                        <!--end calendar_table-->
+                    </div>
+                </div>
+                <div id="right_arrow" class="calendar_arrow"></div>
+            </div>
+            <div class="content_2"><!--BEGIN CONTENT-->
+
+                <div class="row pag_filter"><!--begin pagination_filter-->
+
+                    <div class="leftpag">
+                        <div class="grow">Взрослые</div>
+                        <div id="adult_tickets" class="btn-group tickets" role="group" aria-label="...">
+                            <button type="button" class="btn btn-default first select" id="opt_adult_1">1</button>
+                            <button type="button" class="btn btn-default" id="opt_adult_2">2</button>
+                            <button type="button" class="btn btn-default" id="opt_adult_3">3</button>
+                            <button type="button" class="btn btn-default" id="opt_adult_4">4</button>
+                            <button type="button" class="btn btn-default" id="opt_adult_5">5</button>
+                            <button type="button" class="btn btn-default" id="opt_adult_6">6</button>
+                            <button type="button" class="btn btn-default" id="opt_adult_7">7</button>
+                            <button type="button" class="btn btn-default" id="opt_adult_8">8</button>
+                            <button type="button" class="btn btn-default last" id="opt_adult_9">9</button>
+                        </div>
+
+
+                        <!--<div class="bodyb2"><p class="phead"> <br></p>-->
+                            <!--<label class="chkbx grayborder"><input type="checkbox" hidden><span><div>Только прямые рейсы</div></span></label>-->
+                        <!--</div>-->
+
+                        <!--  <button type="button" class="btn btn-default filter">Фильтр результатов поиска</button> -->
+                        <!-- </div> -->
+                    </div>
+
+                    <div class="middlepad">
+                        <div class="grow">Дети от 2 до 12</div>
+                        <div id="child_tickets" class="btn-group tickets" role="group" aria-label="...">
+                            <button type="button" class="btn btn-default first select" id="opt_child_0">Нет</button>
+                            <button type="button" class="btn btn-default second" id="opt_child_yes">Дети</button>
+                            <button type="button" class="btn btn-default" id="opt_child_1">1</button>
+                            <button type="button" class="btn btn-default" id="opt_child_2">2</button>
+                            <button type="button" class="btn btn-default" id="opt_child_3">3</button>
+                            <button type="button" class="btn btn-default" id="opt_child_4">4</button>
+                            <button type="button" class="btn btn-default" id="opt_child_5">5</button>
+                            <button type="button" class="btn btn-default" id="opt_child_6">6</button>
+                            <button type="button" class="btn btn-default" id="opt_child_7">7</button>
+                            <button type="button" class="btn btn-default last" id="opt_child_8">8</button>
+                        </div>
+
+
+                        <!-- <button type="button" class="btn btn-default filter">Фильтр результатов поиска</button> -->
+                        <!-- </div> -->
+                    </div>
+                    <div class="rightpad">
+                        <div class="grow">Младенцы до 2 лет</div>
+                        <div id="baby_tickets" class="btn-group tickets" role="group" aria-label="...">
+                            <button type="button" class="btn btn-default first select" id="opt_infant_0">Нет</button>
+                            <button type="button" class="btn btn-default last" id="opt_infant_1">1</button>
+                        </div>
+                        <div id="tickets_r">
+                            <div class="grow">Класс</div>
+                            <div id="class_tickets" class="btn-group class">
+                                <button type="button" class="btn btn-default select">Все</button>
+                                <!--<button type="button" class="btn btn-default eco" id="opt_service_class_0">Эконом</button>-->
+                                <!--<button type="button" class="btn btn-default businnes" id="opt_service_class_2">Бизнесс</button>-->
+                            </div>
+                            <label id="search_reis">
+    <!--                            <button type="button" class="btn btn-default search_reis" id="srch"><span class="glyphicon glyphicon-search"></span> Найти рейсы</button>
+                                <div class="search_reis_angle"></div>-->
+                                <div id="search_reis_button"></div>
+                            </label>
+                        </div>
+                    </div>
+
+
+
+                </div><!--end pagination_filter-->
+
+            </div>
+        <!--END CONTENT-->
+    </div><!--END CONTENT_WRAPPER-->
+
+          <!--<div class="month_wrapper">&lt;!&ndash;begin month_wrapper&ndash;&gt;-->
+          <!---->
+          <!--<div class="month">&lt;!&ndash;begin month&ndash;&gt;-->
+            <!--<div class="row month_block">-->
+              <!--<ul>-->
+                <!--<li><a href="#">Январь</a></li>-->
+                <!--<li><a href="#">Февраль</a></li>-->
+                <!--<li><a href="#">Март</a></li>-->
+                <!--<li><a href="#">Апрель</a></li>-->
+                <!--<li><a href="#">Май</a></li>-->
+                <!--<li><a href="#">Июнь</a></li>-->
+                <!--<li><a href="#">Июль</a></li>-->
+                <!--<li><a href="#">Август</a></li>-->
+                <!--<li><a href="#">Сентябрь</a></li>-->
+                <!--<li><a href="#">Октябрь</a></li>-->
+                <!--<li><a href="#">Ноябрь</a></li>-->
+                <!--<li><a href="#">Декабрь</a></li>-->
+             <!--</ul>-->
+          <!--</div>-->
+          <!--</div>&lt;!&ndash;end month&ndash;&gt;-->
+
+          <!--</div>&lt;!&ndash;end month_wrapper&ndash;&gt;-->
+
+    <div class="content_wrapper_2"><!--BEGIN CONTENT_WRAPPER-->
+    <div class="content_2">
+
+        <div class="s_options"><!--begin search_options-->
+
+          <div class="reis_data">
+               <button type="button" class="btn btn-default filter">Фильтр результатов поиска</button>
+            <p style="float: right; margin-right: 384px;">  Санкт-Петербург - Москва <br/>
+            19 марта 2015 (четверг) <br/>
+            Цена на 1 взрослого пассажира включая налоги и сборы <br/></p>
+          </div>
+
+          <div class="deep_options">
+            
+            <!--<div class="b1"><input type="checkbox" class="doptcheck"><p>Все варианты <br>-->
+            <!--<input type="checkbox" class="doptcheck">Дешевые  <br>-->
+            <!--<input type="checkbox" class="doptcheck">Быстрые</p>-->
+            <!--</div>-->
+              <div class="b1">
+                  <!--<input type="checkbox" class="doptcheck"><label for="doptcheck"><span></span></label>-->
+                  <!--<input type="checkbox" class="doptcheck"><label for="doptcheck"><span></span></label>-->
+                  <!--<input type="checkbox" class="doptcheck"><label for="doptcheck"><span></span></label>-->
+
+              <label class="chkbx">
+                  <input type="checkbox" hidden checked><span><div>Все варианты</div></span>
+              </label>
+              <label class="chkbx">
+                  <input type="checkbox" hidden><span><div>Быстрые</div></span>
+              </label>
+              <label class="chkbx">
+                  <input type="checkbox" hidden><span><div>Быстрые</div></span>
+              </label>
+              </div>
+            <div class="b2">
+              <div class="head">Аэропорты <span class="glyphicon glyphicon-triangle-bottom pull-right"></span></div>
+              <div class="bodyb2"><p class="phead">Санкт-Петербург <br></p>
+                  <label class="chkbx blueborder"><input type="checkbox" hidden><span><div>Домодедово</div></span></label>
+              </div>
+            </div>
+
+            <div class="b3">
+              <div class="head">Авиакомпании <span class="glyphicon glyphicon-triangle-bottom pull-right"></span></div>
+              <div class="bodyb3"><p class="phead"></p>
+                  <label class="chkbx blueborder"><input type="checkbox" hidden><span><div>ВИМ-АВИА</div></span></label>
+              </div>
+            </div>
+
+            <div class="b4">
+              <div class="head">Класс <span class="glyphicon glyphicon-triangle-bottom pull-right"></span></div>
+              <div class="bodyb4"><p class="phead"></p>
+                  <label class="chkbx blueborder"><input type="checkbox" hidden><span><div>Эконом</div></span></label>
+              </div>
+            </div>
+
+            <div class="b5">
+              <div class="head">Возврат билета <span class="glyphicon glyphicon-triangle-bottom pull-right"></span></div>
+              <div class="bodyb5"><p class="phead"></p>
+                  <label class="chkbx blueborder"><input type="checkbox" hidden><span><div>Только с возможностью полного или частичного вовзрата</div></span></label>
+              </div>
+            </div>
+
+
+            <div class="b6">
+              <div class="head">Время вылета <span class="glyphicon glyphicon-triangle-bottom pull-right"></span></div>
+              <div class="bodyb6"> 
+                <p><label for="amount">Туда:</label>
+                 <input type="text" id="amount" readonly style="border:0; color:#000; font-weight:100;">
+               </p>
+ 
+              <div id="slider-range"></div>
+            
+
+              <p>
+  <label for="amount">Обратно:</label>
+  <input type="text" id="amount2" readonly style="border:0; color:#000; font-weight:100;">
+</p>
+ 
+<div id="slider-range2"></div></div>
+            </div>
+
+            <div class="b7">
+              <div class="head">Время прибытия <span class="glyphicon glyphicon-triangle-bottom pull-right"></span></div>
+              <div class="bodyb7"> <p>
+  <label for="amount">Туда:</label>
+  <input type="text" id="amount3" readonly style="border:0; color:#000; font-weight:100;">
+</p>
+ 
+<div id="slider-range3"></div>
+        
+
+              <p>
+  <label for="amount">Обратно:</label>
+  <input type="text" id="amount4" readonly style="border:0; color:#000; font-weight:100;">
+</p>
+ 
+<div id="slider-range4"></div></div>
+            </div>
+
+            <div class="b8">
+              <div class="head">Время в пути <span class="glyphicon glyphicon-triangle-bottom pull-right"></span></div>
+              <div class="bodyb8">
+                <p>
+  <label for="amount">Туда:</label>
+  <input type="text" id="amount5" readonly style="border:0; color:#000; font-weight:100;">
+</p>
+ 
+<div id="slider-range5"></div>
+              <p>
+  <label for="amount">Обратно:</label>
+  <input type="text" id="amount6" readonly style="border:0; color:#000; font-weight:100;">
+</p>
+ 
+<div id="slider-range6"></div>
+</div>
+            </div>
+
+            <div class="defaultOpt"><a href="#" id="defaultOpt">Отменить все фильтры</a></div>
+
+
+
+          </div>
+
+           <div class="description">
+            
+            <div class="d1">
+              <ul>
+                <li><a href="#">Цена</a></li>
+                <li><a href="#">Авиакомпания</a></li>
+                <li><a href="#">Вылет</a></li>
+                <li><a href="#">Пересадка</a></li>
+                <li><a href="#">Прилет</a></li>
+                <li><a href="#">Время пути</a></li>
+              </ul>
+            </div>
+
+            <div class="d2">
+              <div class="row plane_ticket">
+              <div id="price">
+                <span>Купить за</span><br>6 420р.
+              </div>
+
+              <div class="readmore pull-left">
+                <a href="#">Подробнее</a>
+              </div>
+              <p class="pull-left company"><img src="images/via.png" alt="">
+              <br>
+              <span>NN-166</span>
+              </p>
+              <p class="pull-left city_from">Санкт-Петербург <br> <span>14:30</span></p>
+              <p class="pull-left reenter">Без пересадки</p>
+              <p class="pull-left city_where">Москва <br> <span>14:30</span></p>
+              <p class="pull-left timeOnAir">2ч. 30м</p>
+
+              </div>
+            </div>
+            
+            <div class="d2">
+              <div class="row plane_ticket">
+              <div id="price">
+                <span>Купить за</span><br>6 420р.
+              </div>
+
+              <div class="readmore pull-left">
+                <a href="#">Подробнее</a>
+              </div>
+              <p class="pull-left company"><img src="images/via.png" alt="">
+              <br>
+              <span>NN-166</span>
+              </p>
+              <p class="pull-left city_from">Санкт-Петербург <br> <span>14:30</span></p>
+              <p class="pull-left reenter">Без пересадки</p>
+              <p class="pull-left city_where">Москва <br> <span>14:30</span></p>
+              <p class="pull-left timeOnAir">2ч. 30м</p>
+
+              </div>
+            </div>
+
+            <div class="d2">
+              <div class="row plane_ticket">
+              <div id="price">
+                <span>Купить за</span><br>6 420р.
+              </div>
+
+              <div class="readmore pull-left">
+                <a href="#">Подробнее</a>
+              </div>
+              <p class="pull-left company"><img src="images/via.png" alt="">
+              <br>
+              <span>NN-166</span>
+              </p>
+              <p class="pull-left city_from">Санкт-Петербург <br> <span>14:30</span></p>
+              <p class="pull-left reenter">Без пересадки</p>
+              <p class="pull-left city_where">Москва <br> <span>14:30</span></p>
+              <p class="pull-left timeOnAir">2ч. 30м</p>
+
+              </div>
+            </div>
+
+            <div class="d2">
+              <div class="row plane_ticket">
+              <div id="price">
+                <span>Купить за</span><br>6 420р.
+              </div>
+
+              <div class="readmore pull-left">
+                <a href="#">Подробнее</a>
+              </div>
+              <p class="pull-left company"><img src="images/via.png" alt="">
+              <br>
+              <span>NN-166</span>
+              </p>
+              <p class="pull-left city_from">Санкт-Петербург <br> <span>14:30</span></p>
+              <p class="pull-left reenter">Без пересадки</p>
+              <p class="pull-left city_where">Москва <br> <span>14:30</span></p>
+              <p class="pull-left timeOnAir">2ч. 30м</p>
+
+              </div>
+            </div>
+
+            <div class="d2">
+              <div class="row plane_ticket">
+              <div id="price">
+                <span>Купить за</span><br>6 420р.
+              </div>
+
+              <div class="readmore pull-left">
+                <a href="#">Подробнее</a>
+              </div>
+              <p class="pull-left company"><img src="images/via.png" alt="">
+              <br>
+              <span>NN-166</span>
+              </p>
+              <p class="pull-left city_from">Санкт-Петербург <br> <span>14:30</span></p>
+              <p class="pull-left reenter">Без пересадки</p>
+              <p class="pull-left city_where">Москва <br> <span>14:30</span></p>
+              <p class="pull-left timeOnAir">2ч. 30м</p>
+
+              </div>
+            </div>
+
+            <div class="d2">
+              <div class="row plane_ticket">
+              <div id="price">
+                <span>Купить за</span><br>6 420р.
+              </div>
+
+              <div class="readmore pull-left">
+                <a href="#">Подробнее</a>
+              </div>
+              <p class="pull-left company"><img src="images/via.png" alt="">
+              <br>
+              <span>NN-166</span>
+              </p>
+              <p class="pull-left city_from">Санкт-Петербург <br> <span>14:30</span></p>
+              <p class="pull-left reenter">Без пересадки</p>
+              <p class="pull-left city_where">Москва <br> <span>14:30</span></p>
+              <p class="pull-left timeOnAir">2ч. 30м</p>
+
+              </div>
+            </div>
+
+            <div class="d2">
+              <div class="row plane_ticket">
+              <div id="price">
+                <span>Купить за</span><br>6 420р.
+              </div>
+
+              <div class="readmore pull-left">
+                <a href="#">Подробнее</a>
+              </div>
+              <p class="pull-left company"><img src="images/via.png" alt="">
+              <br>
+              <span>NN-166</span>
+              </p>
+              <p class="pull-left city_from">Санкт-Петербург <br> <span>14:30</span></p>
+              <p class="pull-left reenter">Без пересадки</p>
+              <p class="pull-left city_where">Москва <br> <span>14:30</span></p>
+              <p class="pull-left timeOnAir">2ч. 30м</p>
+
+              </div>
+            </div>
+
+            <div class="d2">
+              <div class="row plane_ticket">
+              <div id="price">
+                <span>Купить за</span><br>6 420р.
+              </div>
+
+              <div class="readmore pull-left">
+                <a href="#">Подробнее</a>
+              </div>
+              <p class="pull-left company"><img src="images/via.png" alt="">
+              <br>
+              <span>NN-166</span>
+              </p>
+              <p class="pull-left city_from">Санкт-Петербург <br> <span>14:30</span></p>
+              <p class="pull-left reenter">Без пересадки</p>
+              <p class="pull-left city_where">Москва <br> <span>14:30</span></p>
+              <p class="pull-left timeOnAir">2ч. 30м</p>
+
+              </div>
+            </div>
+
+            <div class="d2">
+              <div class="row plane_ticket">
+              <div id="price">
+                <span>Купить за</span><br>6 420р.
+              </div>
+
+              <div class="readmore pull-left">
+                <a href="#">Подробнее</a>
+              </div>
+              <p class="pull-left company"><img src="images/via.png" alt="">
+              <br>
+              <span>NN-166</span>
+              </p>
+              <p class="pull-left city_from">Санкт-Петербург<br> <span>14:30</span></p>
+              <p class="pull-left reenter">Без пересадки</p>
+              <p class="pull-left city_where">Москва <br> <span>14:30</span></p>
+              <p class="pull-left timeOnAir">2ч. 30м</p>
+
+              </div>
+            </div>
+            
+            <button type="button" class="btn btn-default choose_reis">Выбрать</button>
+
+          </div>
+   
+        </div><!--end search_options-->
+      <div id="flyParent">
+          <div class="dashedVerical"></div>
+        <div class="fly_info"><!--begin fly_info-->
+          <div class="airlines"></div>
+          <div class="airport_logo"></div>
+        </div><!--end fly_info-->
+
+        <div class="fly_info_block"><!--begin fly_info_block-->
+          <table border="0" cellspacing="0" cellpadding="0" class="tleft">
+            <tr> 
+              <td class="char">Имя пасажира</td>
+              <td id="name" class="value"></td>
+            </tr>
+            <tr>
+              <td class="char">Откуда</td>
+              <td id="from" class="value">Санкт-Петербург</td>
+            </tr>
+            <tr>
+              <td class="char">Куда</td>
+              <td id="where" class="value">Москва</td>
+            </tr>
+            <tr>
+              <td class="char">Дата / время</td>
+              <td id="date" class="value">18-07-2014 / 13:50</td>
+            </tr>
+            <tr>
+              <td class="char">Рейс / номер рег.</td>
+              <td id="num" class="value">S7 1155 / 100</td>
+            </tr>
+            <tr>
+              <td class="char">Место / класс</td>
+              <td id="position" class="value">9F / N</td>
+            </tr>
+            <tr>
+              <td class="char">Выход / Посадка до</td>
+              <td id="exit" class="value">37 / 13:20</td>
+            </tr>       
+            
+            </table>
+
+            <div class="title">
+              <span class="license">Условия возврата и обмена билетов</span>
+              <span class="sublicense"><img src="images/dollar.png" alt="">Условия возврата - в правилах применения тарифа. <a href="#" style="text-decoration:underline;">Подробнее...</a></span>
+            </div>
+         <!--  <table border="0" cellspacing="0" cellpadding="0">
+             <tr>
+              <td>Условия возврата и обмена билетов</td>
+            </tr>
+
+            <tr>
+              <td>условия возврата - в правилах применения тарифа. Подробнее...</td>
+            </tr>
+          </table> -->
+
+
+           <table border="0" cellspacing="0" cellpadding="0" style="float:right" class="tright">
+            <tr> 
+              <td class="char">Имя пасажира</td>
+              <td id="name" class="value"></td>
+            </tr>
+            <tr>
+              <td class="char">Откуда</td>
+              <td id="from" class="value">Санкт-Петербург</td>
+            </tr>
+            <tr>
+              <td class="char">Куда</td>
+              <td id="where" class="value">Москва</td>
+            </tr>
+            <tr>
+              <td class="char">Дата / время</td>
+              <td id="date" class="value">18-07-2014 / 13:50</td>
+            </tr>
+            <tr>
+              <td class="char">Рейс / номер рег.</td>
+              <td id="num" class="value">S7 1155 / 100</td>
+            </tr>
+            <tr>
+              <td class="char">Место / класс</td>
+              <td id="position" class="value">9F / N</td>
+            </tr>
+            <tr>
+              <td class="char">Выход / Посадка до</td>
+              <td id="exit" class="value">37 / 13:20</td>
+            </tr> 
+            <tr>
+            </tr>      
+			<tfoot>
+				<button type="button" class="btn btn-default done">Подтвердить</button>
+			</tfoot>
+            
+            </table>
+
+            <div class="agree">
+              Я принимаю условия выбранного тарифа <br>
+              
+            </div>
+
+        </div><!--end fly_info_block-->
+      </div>
+      <div id="pay">
+        <div class="pay_head"><!--begin pay_head-->
+          <p>Оплата</p>
+        </div><!--end pay_head-->
+
+        <div class="pay_block"><!--begin pay_block-->
+          <div class="summa"><span>6 486 руб. 00 коп.</span> <br>
+          Стоимость заказа со всеми таксами и сборами
+          </div>
+
+          <div class="methodpay">
+          	            <style type="text/css" media="screen">
+				.oplata input[type="checkbox"]+span,input[type="radio"]+span
+				{
+					  -webkit-appearance: none;
+					  padding: 6px;
+					  width: 14px;
+					  height: 14px;
+					  border: 4px solid rgba(0,0,0,.3);
+					  outline: none;
+					  margin: 5px;
+					  box-sizing: border-box;
+					  display: inline-block;
+				}
+				.oplata input[type="checkbox"]:checked+span:before
+				{
+   				      content: "";
+					  position: absolute;
+					  display: block;
+					  top: 207px;
+					  left: 46px;
+					  width: 9px;
+					  height: 19px;
+					  border: 0 solid rgb(58, 153, 45);
+					  border-width: 0 2px 2px 0;
+					  -webkit-transform: rotateZ(45deg);
+					  margin: -9px -4px;
+					  pointer-events: none;
+				}
+				.euro.oplata input[type="checkbox"]:checked+span:before
+				{
+					left: 356px;
+				}
+				.webmoney.oplata input[type="checkbox"]:checked+span:before
+				{
+					top: 211px;
+					left: 665px;
+				}
+				.webmoney.oplata input[type="checkbox"]+span,input[type="radio"]+span
+				{
+					top: 10px;
+				}
+				.methodpay
+				{
+					margin-top: 10px;
+				}
+				.oplata label span
+				{
+					margin-top: -10px !important;
+				}
+                            
+                .oplata.agreee input[type="checkbox"]:checked+span:before
+                {
+                    left: 8px; top: 0;
+                }
+				
+				</style>
+            <div class="bankcard oplata"><p>Банковской картой</p></div>
+            <div class="cash oplata"><p>Наличными</p></div>
+            <div class="e-money oplata"><p>Электронными деньгами</p></div>
+            <div class="visa oplata">
+
+            	<label>
+            		<input type="checkbox" hidden checked>
+            			<span></span>
+            			                <p style="  position: absolute;  top: 202px;  left: 55px;">
+                    <img src="images/pay.png" alt="">
+                    &nbsp;Картой Visa или Mastercard
+                </p>
+            	</label>
+            	<!-- <label>
+            			<input type="checkbox" hidden>
+            			<span></span>
+            	</label>
+            	<label>
+            		<input type="checkbox" hidden>
+            		<span></span>
+            	</label> -->
+            </div>
+            <div class="euro oplata">
+            	<label>
+            		<input type="checkbox" hidden checked>
+            			<span></span>
+            		<p style="  position: absolute;  top: 202px;  left: 367px;">
+                    <img src="images/evro.png" alt="">&nbsp;В салонах "Евросеть"</p></div>                    
+                </p></label>
+            		
+            	</div>
+            <div class="webmoney oplata">
+            	<label>
+            		<input type="checkbox" hidden checked>
+            		            			<span style="  margin-top: 15px !important;  margin-left: 27px;"></span>
+            		<p style="  position: absolute;  top: 202px;  left: 680px;">
+            			<img src="images/webmoney.png" alt="">&nbsp;Webmoney
+            	</label>
+            </div>
+          </div>
+
+          <div class="payOptions" name="payOptions">
+              <table cellpadding="0" cellspacing="0" class="fio">
+                <tr>
+                  <td>Обращение</td>
+                  <td>
+                    <label for="">
+                      <select name="obrash" id="obr">
+                        <option value="0"></option>
+                        <option value="1">Господин</option>
+                        <option value="2">Госпожа</option>
+                      </select>
+                    </label>
+                  </td>
+                </tr>
+                 <tr>
+                  <td>Фамилия</td>
+                  <td><label for="">
+                    <input type="text" class="inputs1" name="lastName" />
+                  </label></td>
+                </tr>
+                 <tr>
+                  <td>Имя</td>
+                  <td><label for="">
+                    <input type="text" class="inputs1" name="firstName"/>
+                  </label></td>
+                </tr>
+                 <tr>
+                  <td>Отчество</td>
+                  <td><label for="">
+                    <input type="text" class="inputs1" name="parentName"/>
+                  </label></td>
+                </tr>
+                 <tr>
+                  <td>Дата рождения пассажира</td>
+                  <td><label for="">
+                      <select name="birthDay" class="birthday">
+                        <option value="0">День</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="2">3</option>
+                        <option value="2">4</option>
+                        <option value="2">5</option>
+                        <option value="2">6</option>
+                        <option value="2">7</option>
+                        <option value="2">8</option>
+                        <option value="8">9</option>
+                        <option value="9">10</option>
+                        <option value="10">11</option>
+                        <option value="11">12</option>
+                        <option value="12">13</option>
+                        <option value="13">14</option>
+                        <option value="14">15</option>
+                        <option value="15">16</option>
+                        <option value="16">17</option>
+                        <option value="17">18</option>
+                        <option value="18">19</option>
+                        <option value="19">20</option>
+                        <option value="20">21</option>
+                        <option value="21">22</option>
+                        <option value="22">23</option>
+                        <option value="23">24</option>
+                        <option value="24">25</option>
+                        <option value="25">26</option>
+                        <option value="26">27</option>
+                        <option value="27">28</option>
+                        <option value="28">29</option>
+                        <option value="29">30</option>
+                        <option value="30">31</option>
+                      </select>
+                    </label>
+                    <label for="">
+                      <select name="birthMonth" class="birthday">
+                        <option value="0">Месяц</option>
+                        <option value="1">Январь</option>
+                        <option value="2">Февраль</option>
+                        <option value="2">Март</option>
+                        <option value="2">Апрель</option>
+                        <option value="2">Май</option>
+                        <option value="2">Июнь</option>
+                        <option value="2">Июль</option>
+                        <option value="2">Август</option>
+                        <option value="8">Сентябрь</option>
+                        <option value="9">Октябрь</option>
+                        <option value="10">Ноябрь</option>
+                        <option value="11">Декабрь</option>
+                      </select>
+                    </label>
+                    <label for="">
+                      <select name="birthYear" class="birthday">
+                        <option value="0">Год</option>
+                        <option value="1">1950</option>
+                        <option value="2">1951</option>
+                        <option value="3">1952</option>
+                        <option value="4">1953</option>
+                        <option value="5">1954</option>
+                        <option value="6">1955</option>
+                        <option value="7">1956</option>
+                        <option value="8">1957</option>
+                        <option value="9">1958</option>
+                        <option value="10">1959</option>
+                        <option value="11">1960</option>
+                        <option value="12">1961</option>
+                        <option value="13">1962</option>
+                        <option value="14">1963</option>
+                        <option value="15">1964</option>
+                        <option value="16">1965</option>
+                        <option value="17">1966</option>
+                        <option value="18">1967</option>
+                        <option value="19">1968</option>
+                        <option value="20">1969</option>
+                        <option value="21">1970</option>
+                        <option value="22">1971</option>
+                        <option value="23">1972</option>
+                        <option value="24">1973</option>
+                        <option value="25">1974</option>
+                        <option value="26">1975</option>
+                        <option value="27">1976</option>
+                        <option value="28">1977</option>
+                        <option value="29">1978</option>
+                        <option value="30">1979</option>
+                        <option value="31">1980</option>
+                        <option value="32">1980</option>
+                        <option value="33">1982</option>
+                        <option value="34">1983</option>
+                        <option value="35">1984</option>
+                        <option value="36">1985</option>
+                        <option value="37">1986</option>
+                        <option value="38">1987</option>
+                        <option value="39">1988</option>
+                        <option value="40">1989</option>
+                        <option value="41">1990</option>
+                        <option value="42">1991</option>
+                        <option value="43">1992</option>
+                        <option value="44">1993</option>
+                        <option value="45">1994</option>
+                        <option value="46">1995</option>
+                        <option value="47">1996</option>
+                        <option value="48">1997</option>
+                        <option value="49">1998</option>
+                        <option value="50">1999</option>
+                        <option value="51">2000</option>
+                        <option value="52">2001</option>
+                        <option value="53">2002</option>
+                        <option value="54">2003</option>
+                        <option value="55">2004</option>
+                        <option value="56">2005</option>
+                        <option value="57">2006</option>
+                        <option value="58">2007</option>
+                        <option value="59">2008</option>
+                      </select>
+                    </label>
+                  </td>
+                 
+                </tr>
+                 <tr>
+                  <td>Тип документа</td>
+                  <td>
+                    <label for="">
+                      <select name="passport" id="passport">
+                        <option value="0">Паспорт РФ</option>
+                        <option value="1"></option>
+                        <option value="2"></option>
+                      </select>
+                    </label>
+                  </td>
+                </tr>
+                 <tr>
+                  <td>Номер документа</td>
+                  <td><input type="text" name="docNum" class="inputs1"></td>
+                </tr>
+              </table>
+          
+        <span class="please">Пожалуйста, выберите из списка или введите контактную информацию  (подробнее).</span>
+          <table cellspacing="0" cellpadding="0" class="fio someInfo">
+            <tbody>
+                  <tr>
+                  <td>Контактное лицо</td>
+                  <td><label for="">
+                    <input type="text" name="contactFace" class="inputs2"/>
+                  </label></td>
+                </tr>
+                  <tr>
+                  <td>Контактный телефон</td>
+                  <td><label for="">
+                    <input type="text" name="contactPhone" class="inputs2"/>
+                  </label></td>
+                </tr>
+                  <tr>
+                  <td>Электронная почта</td>
+                  <td><label for="">
+                    <input type="text" name="contactEmail" class="inputs2"/>
+                  </label></td>
+                </tr>
+              </tbody>
+          </table>
+
+<div class="oplata agreee">
+            	<label>
+            		<input type="checkbox" hidden checked>
+            			<span></span>
+            			                <p style="  position: absolute;  top: 202px;  left: 55px;">
+                </p>
+            	</label>
+	
+</div>
+              <span class="agree">Я согласен с <span class="colorBlue">Публичной офертой по продаже авиабилетов, правилами применения таифов, с условиями возврата и обмена билетов</span> и <br> на предоставление паспортных данных</span>
+
+
+          <div class="block2">
+           <label><input name="block" type="radio" value="t_0"><div class="radioLabel">Новый пасажир(взрослый) <br/><em></em></div></label>
+           <label><input name="block" type="radio" value="t_1"><div class="radioLabel _">Г-жа Манукян Светлана <br/><em>10.5.1960 Паспорт РФ 820614672</em></div></label>
+           <label><input name="block" type="radio" value="t_2"><div class="radioLabel _">Г-н Иванов Иван<br/><em>10.1.1970 Паспорт РФ 8208914672</em></div></label>
+           <label><input name="block" type="radio" value="t_3"><div class="radioLabel _">Г-жа Василевская Елена<br/><em>16.8.1963 Паспорт РФ 8670614672</em></div></label>
+           <label><input name="block" type="radio" value="t_4"><div class="radioLabel _">Г-жа Ефимовых Екатерина <br/><em>13.5.1950 Паспорт РФ 660614672</em></div></label>
+		  </div>
+
+          </div>
+        </div><!--end pay_block-->
+        <div class="data"><!--begin data-->
+            <button type="button" class="btn btn-default prev"><span class="glyphicon glyphicon-triangle-left"></span>Назад</button>
+            <button type="button" class="btn btn-default next">Вперед <span class="glyphicon glyphicon-triangle-right"></span></button>
+            <div class="row blocks">
+
+                <div class="col-lg-3 b_rent">
+                    <span class="blockH">Справка</span>
+
+                    <ul>
+                        <li><a href="#">Как выгодно заказать билет</a></li>
+                        <li><a href="#">Как и где оплатить билет</a></li>
+                        <li><a href="#">Как получить билет</a></li>
+                        <li><a href="#">Возврат билета</a></li>
+                        <li><a href="#">Путешетвия с детьми</a></li>
+                        <li><a href="#">Правила перевозки</a></li>
+                        <li><a href="#" class="seeall"><div></div>смотреть всё</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-1 b_service">
+                    <span class="blockH">biletix</span>
+
+                    <ul>
+                        <li><a href="#">О проекте</a></li>
+                        <li><a href="#">Чартеры</a></li>
+                        <li><a href="#">Аэроэкспресс</a></li>
+                        <li><a href="#">Страхование</a></li>
+                        <li><a href="#">Контакты</a></li>
+                        <li><a href="#">Новости</a></li>
+                        <li><a href="#" class="seeall"></a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 b_social">
+                    <span class="blockH">мы в соцсетях</span>
+
+                    <ul>
+                        <li><a href="#">ВКонтакте</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Livejurnal</a></li>
+                        <li><a href="#">Одноклассники</a></li>
+                        <li><a href="#">Insagram</a></li>
+                        <li><a href="#">Google +</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 b_check">
+                    <span class="blockH">популярные направления</span>
+                    <ul>
+                        <li><a href="#">Москва - Краснодар</a></li>
+                        <li><a href="#">Москва - Краснодар</a></li>
+                        <li><a href="#">Москва - Краснодар</a></li>
+                        <li><a href="#">Москва - Краснодар</a></li>
+                        <li><a href="#">Москва - Краснодар</a></li>
+                        <li><a href="#">Москва - Краснодар</a></li>
+                        <li><a href="#">Москва - Краснодар</a></li>
+                        <li><a href="#">Москва - Краснодар</a></li>
+                        <li><a href="#" class="seeall"><div></div>смотреть всё</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 b_check2">
+                    <span class="blockH">лучшие предложения</span>
+                    <ul>
+                        <li><a href="#">Москва - Лондон 10827 руб.</a></li>
+                        <li><a href="#">Москва - Лондон 10827 руб.</a></li>
+                        <li><a href="#">Москва - Лондон 10827 руб.</a></li>
+                        <li><a href="#">Москва - Лондон 10827 руб.</a></li>
+                        <li><a href="#">Москва - Лондон 10827 руб.</a></li>
+                        <li><a href="#">Москва - Лондон 10827 руб.</a></li>
+                        <li><a href="#">Москва - Лондон 10827 руб.</a></li>
+                        <li><a href="#">Москва - Лондон 10827 руб.</a></li>
+                        <li><a href="#" class="seeall"><div></div>смотреть всё</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div><!--end data-->
+
+        <div class="news"><!--begin news-->
+            <H2>Новости</H2>
+            <div class="row">
+                <div class="col-md-1"><img src="images/andro.png" alt="" align="left"></div>
+                <div class="col-md-11"><a href="#"><span>Мобильное приложение Anywayanyday</a> - теперь и для планшета на Android!</span></div>
+            </div>
+            <div class="row">
+                <div class="col-md-1"><img src="images/smart_phone.png" alt=""></div>
+                <div class="col-md-11"><span>Акция: Скидка до 15% на бронирование отеля через предустановленное мобильное приложение Anywayanyday на Samsung GALAXY S5!</span></div>
+            </div>
+            <div class="row">
+                <div class="col-md-1"><img src="images/promo.png" alt=""></div>
+                <div class="col-md-11"><span>Покупка авиабилета даёт скидку до 10% на бронирование отеля. Бронирование отеля - до 10% на покупку авиабилета.</span></div>
+            </div>
+            <br>
+            <br>
+
+        </div><!--end news-->
+        </div>
+
+    </div>
+
+
+
+
+
+        </div><!--END CONTENT-->
+    </div><!--END CONTENT_WRAPPER-->
+
+     <div class="footer_wrapper"><!--BEGIN FOOTER_WRAPPER-->
+        
+           <div class="footer"><!--BEGIN FOOTER-->
+               <div id="socnet">
+                   <img src="images/socnets.png" alt="" usemap="#Navigation">/>
+                   <map name="Navigation">
+                       <area shape="rect" coords="0,0,30px,20px" href="https://google.ru/" target="_blank" alt="Google Plus" />
+                       <area shape="rect" coords="30px,0,60px,20px" href="https://instagram.com/" target="_blank" alt="Instagram" />
+                       <area shape="rect" coords="60px,0,90px,20px" href="https://my.mail.ru/" target="_blank" alt="MyMail" />
+                       <area shape="rect" coords="90px,0,120px,20px" href="https://twitter.com" target="_blank" alt="Twitter" />
+                       <area shape="rect" coords="120px,0,150px,20px" href="https://facebook.com/" target="_blank" alt="Facebook" />
+                       <area shape="rect" coords="150px,0,180px,20px" href="https://youtube.com/" target="_blank" alt="YouTube" />
+                   </map>
+               </div>
+                <div class="plane"></div>
+           </div><!--END FOOTER-->
+
+    </div><!--END FOOTER_WRAPPER-->
+    
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.js"></script>
+    <script src="js/range.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/jquery.scrollTo.js"></script>
+  </body>
+
+  <script>
+  window.arr = false;
+  function createMonth(dayInWeak, dayCount, montName, Y, m, p) {
+  var html = '<div class="month n' + parseInt(m) + '" data-scroll="' + p + '"><table><caption>' + montName + " " + Y + '</caption><thead><tr><th>пн</th><th>вт</th><th>ср</th><th>чт</th><th>пт</th><th>сб</th><th>вс</th></tr></thead><tbody>';
+      html += '<tr>';
+      var day = 1;
+      for (var i = 1; i <= 7; i++) {
+          if (i < dayInWeak) {
+              html += '<th></th>';
+          } else {
+              if (day.toString().length == 1) {
+                  var d = "0" + day;
+              } else {
+                  var d = day;
+              }
+              html += '<td class="td"><span class="date" data-date="' + Y + '-' + m + '-' + d + '"><span class="day">' + day + '</span></span></td>';
+              day++;
+          }
+      }
+      html += '</tr>';
+
+      for (var i = day; i <= dayCount;) {
+          html += '<tr>';
+          for (var j = 1; j <= 7; j++) {
+              if (i <= dayCount) {
+                  if (i.toString().length == 1) {
+                      var d = "0" + i;
+                  } else {
+                      var d = i;
+                  }
+                  html += '<td class="td"><span class="date" data-date="' + Y + '-' + m + '-' + d + '"><span class="day">' + i + '</span></span></td>';
+              } else {
+                  html += '<th></th>';
+              }
+              i++;
+          }
+          html += '</tr>';
+      }
+      html += '</tbody></table></div>';
+      return html;
+  }
+
+  function createCalendar() {
+      var date = new Date();
+      var monthName = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
+      var html = "";
+      for (var i = 1; i <= 12; i++) {
+          var currentDate = (new Date(date.getFullYear(), date.getMonth() + (i - 1), date.getDate()));
+          /**/
+          var dayCount = (new Date(date.getFullYear(), date.getMonth() + i, 0)).getDate();
+          var dayInWeak = (new Date(date.getFullYear(), date.getMonth() + (i - 1), 1)).getDay();
+          /**/
+          var monthNumber = currentDate.getMonth();
+          var y = currentDate.getFullYear();
+          if ((monthNumber + 1).toString().length == 1) {
+              var m = "0" + (monthNumber + 1);
+          } else {
+              var m = monthNumber + 1;
+          }
+          html += createMonth(dayInWeak, dayCount, monthName[monthNumber], y, m, i);
+      };
+      return html;
+  }
+  $('body').on('click', '.date', function() {
+      var date = ($(this).data('date')).split('-');;
+      var monthName = ['янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'];
+      var input = $('.check_aero input:checked');
+      if (!window.arr) {
+          $('.calendar_table .date').each(function(index, th) {
+              $(th).removeClass('cur_select');
+          });
+          $(this).addClass('cur_select');
+          input.val($(this).data('date'));
+          input.next('.flight_date').find('label').text(date[2] + " " + monthName[date[1] - 1]);
+          return true;
+      }
+      if (input.attr('id') == 'check_dep_aero') {
+          if (!$(this).hasClass('no_active2')) {
+              $('.calendar_table .no_active').each(function(index, th) {
+                  $(th).removeClass('no_active');
+              });
+              var thDate = $(this).data('date');
+              $('.calendar_table').find('.date').each(function(index, th) {
+                  $th = $(th);
+                  $th.removeClass('cur_select');
+                  if (comparisonDate(thDate, $th.data('date'))) {
+                      $th.addClass('no_active');
+                  }
+              });
+
+              input.val($(this).data('date'));
+              input.next('.flight_date').find('label').text(date[2] + " " + monthName[date[1] - 1]);
+          }
+      } else {
+          if (!$(this).hasClass('no_active')) {
+              $('.calendar_table .no_active2').each(function(index, th) {
+                  $(th).removeClass('no_active2');
+              });
+              var thDate = $(this).data('date');
+              $('.calendar_table').find('.date').each(function(index, th) {
+                  $th = $(th);
+                  $th.removeClass('cur_select');
+                  if (comparisonDate(thDate, $th.data('date'), true)) {
+                      $th.addClass('no_active2');
+                  }
+              });
+
+              input.val($(this).data('date'));
+              input.next('.flight_date').find('label').text(date[2] + " " + monthName[date[1] - 1]);
+          }
+      }
+  });
+  $('body').on('click', '#opt_RT_OW_RT', function() {
+      $('#check_arr_radio').next('.flight_date').find('label').attr('for', 'check_arr_radio');
+      $('.calendar_table .date').each(function(index, th) {
+          $(th).removeClass('cur_select');
+      });
+      /**/
+      var thDate = $('#check_dep_aero').val();
+      $('.calendar_table').find('.date').each(function(index, th) {
+          $th = $(th);
+          if (comparisonDate(thDate, $th.data('date'))) {
+              $th.addClass('no_active');
+          }
+      });
+      /**/
+      window.arr = true;
+      $(this).addClass('selected');
+      $('#opt_RT_OW_OW').removeClass('selected');
+      $('.singularMode').removeClass('singularMode');
+  });
+  $('body').on('click', '#opt_RT_OW_OW', function() {
+      $('.calendar_table .date').each(function(index, th) {
+          $(th).removeClass('no_active2');
+          $(th).removeClass('no_active');
+          $(th).addClass('singularMode');
+      });
+      /**/
+      var thDate = $('#check_dep_aero').val();
+      $('[data-date=' + thDate + ']').addClass('cur_select');
+      /**/
+      window.arr = false;
+      $('#check_arr_radio').next('.flight_date').find('label').attr('for', '');
+      $('#check_dep_aero').prop('checked', true);
+      $(this).addClass('selected');
+      $('#opt_RT_OW_RT').removeClass('selected');
+  });
+  glob_monthPosition = 0;
+  $('body').on('click', '#left_arrow', function() {
+      if (glob_monthPosition > 0)      glob_monthPosition -= 374;
+      var monthPosition = $('.calendar_table').find('.n' + $(this).data('month')).data('scroll');
+      $('.calendar_check').scrollLeft(glob_monthPosition);
+  });
+  $('body').on('click', '#right_arrow', function() {
+      if (glob_monthPosition < 3000)      glob_monthPosition += 374;
+      var monthPosition = $('.calendar_table').find('.n' + $(this).data('month')).data('scroll');
+      $('.calendar_check').scrollLeft(glob_monthPosition);
+  });
+//      $('body').on('click', '.check_month', function() {
+//          var monthPosition = $('.calendar_table').find('.n' + $(this).data('month')).data('scroll');
+//          $('.calendar_check').scrollLeft(monthPosition * 400 - 800);
+//  });
+
+  function comparisonDate(currentDate, newDate, inv) {
+      var inverse = inv || false;
+      var cD = currentDate.split('-');
+      var nD = newDate.split('-');
+      if (!inverse) {
+          if (parseInt(nD[0]) < parseInt(cD[0])) {
+              return true;
+          } else if (parseInt(nD[0]) == parseInt(cD[0])) {
+              if (parseInt(nD[1]) < parseInt(cD[1])) {
+                  return true;
+              } else if (parseInt(nD[1]) == parseInt(cD[1])) {
+                  if (parseInt(nD[2]) < parseInt(cD[2])) {
+                      return true;
+                  }
+              }
+          }
+          return false;
+      } else {
+          if (parseInt(nD[0]) > parseInt(cD[0])) {
+              return true;
+          } else if (parseInt(nD[0]) == parseInt(cD[0])) {
+              if (parseInt(nD[1]) > parseInt(cD[1])) {
+                  return true;
+              } else if (parseInt(nD[1]) == parseInt(cD[1])) {
+                  if (parseInt(nD[2]) > parseInt(cD[2])) {
+                      return true;
+                  }
+              }
+          }
+          return false;
+      }
+  }
+  main = $('.calendar_table');
+  main.html(createCalendar());
+  (function() {
+      $('.date').each(function(index, th) {
+          var currentDate = new Date();
+          /**/
+          var Year = currentDate.getFullYear();
+          /**/
+          var monthNumber = currentDate.getMonth();
+          if ((monthNumber + 1).toString().length == 1) {
+              var Month = "0" + (monthNumber + 1);
+          } else {
+              var Month = monthNumber + 1;
+          }
+          /**/
+          var dayNumber = currentDate.getDate();
+          if (dayNumber.toString().length == 1) {
+              var Day = "0" + dayNumber;
+          } else {
+              var Day = dayNumber;
+          }
+          /**/
+          var thDate = "" + Year + "-" + Month + "-" + Day;
+          $th = $(th);
+          if (comparisonDate(thDate, $th.data('date'))) {
+              $th.removeClass('date');
+          }
+      });
+  })();
+
+
+    $(document).ready(function(){
+        $('#opt_RT_OW_OW').click();
+    });
+  </script>
+
+</html>
+
+<!-- <!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery UI Slider - Range slider</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script>
+  $(function() {
+    $( "#slider-range" ).slider({
+      range: true,
+      min: 0,
+      max: 500,
+      values: [ 75, 300 ],
+      slide: function( event, ui ) {
+        $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+      }
+    });
+    $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
+      " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+  });
+  </script>
+</head>
+<body>
+ 
+<p>
+  <label for="amount">Price range:</label>
+  <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+</p>
+ 
+<div id="slider-range"></div>
+ 
+ 
+</body>
+</html> -->
